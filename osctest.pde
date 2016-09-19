@@ -63,7 +63,7 @@ void oscEvent(OscMessage theOscMessage) {
   }
 
   if (theOscMessage.addrPattern().equals("/1/peakEnergy")) {
-    oscValues[6] = theOscMessage.get(0).floatValue();
+    oscValues[6] = map(theOscMessage.get(0).floatValue(), 0, 1, 0, width);
   }
   
   if (theOscMessage.addrPattern().equals("/1/pitch")) {
